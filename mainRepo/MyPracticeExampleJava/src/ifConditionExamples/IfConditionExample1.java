@@ -25,8 +25,9 @@ public class IfConditionExample1 {
         }
         System.out.println(str1 + "Your electricity bill is:" + cost + "Rs.");
         if (cost > 2000) {
-            cost = cost + (cost + 1 / 100);
-            System.out.println(str1 + "discount amount" + discount);
+            discountamount = cost + (cost + 1 / 100);
+            cost = cost - discountamount;
+            System.out.println(str1 + "discount amount" + cost);
         }
     }
 }

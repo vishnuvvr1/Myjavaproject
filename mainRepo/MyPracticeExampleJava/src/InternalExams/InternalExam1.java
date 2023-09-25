@@ -1,7 +1,5 @@
 package InternalExams;
-
 import java.util.Scanner;
-
 public class InternalExam1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -15,7 +13,6 @@ public class InternalExam1 {
             cost = a * 5;
         } else if (a > 750) {
             cost = (100 * 5) + ((a - 100) * 7.5);
-
         } else if (a >= 750 && a < 1500) {
             cost = (a - 750) * 15 + (a - (a - 650) - 100) * 7.5 + (100 * 5);
         }
@@ -26,5 +23,4 @@ public class InternalExam1 {
             System.out.println(str1 + "discount-amount" + cost);
         }
     }
-
 }

@@ -1,10 +1,16 @@
-    import java.util.List;
+//import java.util.List;
 public class Array_1 {
+    int b = 30;
     public static void main(String[] args) {
-        String[] arrayList = {"Vishnu", "Vardhan", "Reddy","saif"};
-        for (int i = 0; i< arrayList.length; i++) {
-            System.out.println(arrayList[i]);
+        int a = 20;
+        if (a <= 90) {
+            int c = 80;
+            System.out.println(c);
         }
-        System.out.println("element at first index: " + arrayList[1]);
+        System.out.println(a);
+        Array_1 vishnu = new Array_1();
+        System.out.println(vishnu.b);
+
     }
+
 }

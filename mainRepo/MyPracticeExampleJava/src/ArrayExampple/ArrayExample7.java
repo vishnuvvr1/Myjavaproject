@@ -14,10 +14,8 @@ public class ArrayExample7 {
             array[i] = a;
         }
         for (int var : array) {
-            sum = sum+var;
-
-            System.out.println("sum of all numbers=" + var + " ");
+            sum+=var;
         }
-        System.out.println("sum of given all numbers=" +sum);
+        System.out.println("sum of given all numbers = " + sum);
     }
 }

@@ -17,7 +17,6 @@ public class ArrayExample5 {
         System.out.println("interger array:");
         for (int i = 0; i < intarray.length; i++) {
             System.out.println("From Integer array =" + intarray[i]);
-            System.out.println("\n");
             System.out.println("from String array =" + stringarray[i]);
         }
     }

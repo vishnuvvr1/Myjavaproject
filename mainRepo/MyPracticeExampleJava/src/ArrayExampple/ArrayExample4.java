@@ -7,17 +7,15 @@ public class ArrayExample4 {
         Scanner vvr = new Scanner(System.in);
         int[] array = new int[5];
         for (int i = 0; i < array.length; i++) {
-            System.out.println("enter a five number=");
+            System.out.print("enter a five number = ");
             int a = vvr.nextInt();
             array[i] = a;
         }
         for (int i = 0; i < array.length; i++) {
-            //for (int var : array) {
             if (array[i] % 2 == 0) {
-                int result = array[i] * 10;
-                System.out.println("after multiply with 10,given number " + array[i] + "becomes" + result);
+                System.out.println("even number = " + array[i]);
             } else {
-                System.out.println(array[i] + "is an odd number");
+                System.out.println(array[i] + " = is an odd number");
             }
         }
     }

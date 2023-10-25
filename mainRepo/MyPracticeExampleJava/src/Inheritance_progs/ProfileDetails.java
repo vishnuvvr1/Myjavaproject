@@ -6,11 +6,16 @@ class Profile {
     String college;
     long mobilenumnber;
 
+    public void profileDetails() {
+        System.out.println("My name is = " + name);
+        System.out.println("My age is = " + age);
+        System.out.println("My college is = " + college);
+        System.out.println("My mobilenumber is = " + mobilenumnber);
+
+    }
+
     Profile() {
-        name = "";
-        age = 0;
-        college = "";
-        mobilenumnber = 0;
+
     }
 
     Profile(String name, int age, String college, Long mobilenumnber) {
@@ -18,14 +23,6 @@ class Profile {
         this.age = age;
         this.college = college;
         this.mobilenumnber = mobilenumnber;
-    }
-
-    public void profileDetails() {
-        System.out.println("My name is = " + name);
-        System.out.println("My age is = " + age);
-        System.out.println("My college is = " + college);
-        System.out.println("My mobilenumber is = " + mobilenumnber);
-
     }
 
 }

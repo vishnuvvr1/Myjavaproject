@@ -9,5 +9,7 @@ public class Builder {
 
     public static void modifyReference(StringBuilder reference) {
         reference.append(", world");
+        reference.insert(5, " Java");
+        //reference.reverse();//string means name should be reverse
     }
 }

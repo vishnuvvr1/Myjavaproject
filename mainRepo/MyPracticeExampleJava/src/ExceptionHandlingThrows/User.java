@@ -1,11 +1,10 @@
-package ExceptionHandlingprog;
+package ExceptionHandlingThrows;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class User {
-    public String userName;
+class User {
     private String username;
     private String password;
 
@@ -30,17 +29,18 @@ class UserValidator {
         this.users = new ArrayList<>();
     }
 
-    public void collectUserDetails(int numberOfUsers) {
-        Scanner scanner = new Scanner(System.in);
-
+    public void collectUserDetails(int numberOfUsers, Scanner scanner) {
         for (int i = 0; i < numberOfUsers; i++) {
             String username;
+
             do {
-                System.out.println("Please enter user name (must be at least 10 characters):");
+                System.out.println("Please enter user name (must be exactly 10 characters):");
                 username = scanner.nextLine();
 
-                if (username.length() < 10) {
-                    System.out.println("Username must be at least 10 characters. Please enter again.");
+                if (username.length() < 10) { // in this prog  in if condition statement  != means exactly take 10 character only
+
+                    // < means take 10 more character both are possible
+                    System.out.println("Username must be exactly 10 characters. Please enter again.");
                 }
             } while (username.length() < 10);
 
@@ -50,12 +50,9 @@ class UserValidator {
             User user = new User(username, password);
             users.add(user);
         }
-
-        scanner.close(); // Close the scanner to prevent resource leak
     }
-    public void validateUser() {
-        Scanner scanner = new Scanner(System.in);
 
+    public void validateUser(Scanner scanner) {
         System.out.println("Please enter your username:");
         String enteredUsername = scanner.nextLine();
 
@@ -94,20 +91,34 @@ class UsernameNotFoundException extends RuntimeException {
         super(message);
     }
 
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Hi Admin. How many User details you want to enter into your system:");
-        int numberOfUsers = scanner.nextInt();
+        System.out.println("Hi Admin. How many User details do you want to enter into your system:");
+        int numberOfUsers;
+
+        while (true) {
+            try {
+                numberOfUsers = Integer.parseInt(scanner.nextLine());
+                if (numberOfUsers > 0) {
+                    break;
+                } else {
+                    System.out.println("Please enter a valid positive number of users.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a number.");
+            }
+        }
 
         UserValidator userValidator = new UserValidator();
-        userValidator.collectUserDetails(numberOfUsers);
+        userValidator.collectUserDetails(numberOfUsers, scanner);
 
         try {
-            userValidator.validateUser();
+            userValidator.validateUser(scanner);
         } catch (UsernameNotFoundException | InvalidPasswordException e) {
             System.out.println(e.getMessage());
         }
-    }
 
+    }
 }
